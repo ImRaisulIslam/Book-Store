@@ -21,17 +21,18 @@ namespace BookStore.Controllers
             _bookRepository = new BookRepository();
         }
 
-        public List<BookModel> GetAllBooks()
+        public ViewResult GetAllBooks()
         {
-            return _bookRepository.GetAllBooks();
+            var data = _bookRepository.GetAllBooks();
+            return View(data);
         }
-        public BookModel GetAllBook(int id)
+        public BookModel GetABook(int id)
         {
             return _bookRepository.GetBookById(id);
         }
-        public List<BookModel> SearchBooks(string Author , string Book )
+        public List<BookModel> SearchBooks(string BookName , string AuthorName )
         {
-            return _bookRepository.ScarchBook(Author, Book);
+            return _bookRepository.ScarchBook(BookName, AuthorName);
         }
     }
 }

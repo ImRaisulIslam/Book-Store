@@ -18,19 +18,19 @@ namespace BookStore.Repository
         {
             return DataSource().Where(x => x.Id == id).FirstOrDefault();
         }
-        public List<BookModel> ScarchBook(string BookName, string AutherName)
+        public List<BookModel> ScarchBook(string BooksName, string AuthorsName)
         {
-            return DataSource().Where(x => x.Title.Contains(BookName) && x.Author.Contains(AutherName)).ToList();
+            return DataSource().Where(x => x.Title.Contains(BooksName) || x.Author.Contains(AuthorsName)).ToList();
         }
 
         private List<BookModel> DataSource()
         {
             return new List<BookModel>()
             {
-                new BookModel(){ Id=1,Title="MVC",Author="Raisul" },
-                new BookModel(){ Id=2,Title="MVC",Author="Pollob" },
+                new BookModel(){ Id=1,Title="MVC",Author="Raisul",Descrption="This is Description 1" },
+                new BookModel(){ Id=2,Title="C#",Author="Rashed" ,Descrption="This is Description 2" },
 
-                new BookModel(){ Id=3,Title="MVC",Author="Rasel" },
+                new BookModel(){ Id=3,Title="PHP",Author="Rasel",Descrption="This is Description 3"  },
 
 
 

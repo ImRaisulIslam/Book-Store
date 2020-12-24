@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BookStore.Models.BookModel>
+
+
+@{
+    ViewData["Title"] = "GetAllBooks";
+}
+
+<div class="container">
+    <h2> All Book List</h2>
+    <div class="row">
+
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+
+
+
+                    <img class="card-img-top" src="~/images/1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">@book.Descrption</p>
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="btn btn-sm btn-primary">See Details</a>
+                            <small class="text-muted text-right ">@book.Author</small>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>
+
